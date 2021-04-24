@@ -13,7 +13,11 @@ const Home = () => {
       const item = data.posts;
       console.log(item);
       const listPosts = item.map((post) => {
-        return <li key={post.title}>{post.title}</li>;
+        return (
+          <li key={post.title}>
+            <a href={post.url}>{post.title}</a>
+          </li>
+        );
       });
       setPosts(listPosts);
     };

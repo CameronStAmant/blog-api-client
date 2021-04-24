@@ -6,5 +6,6 @@
 .postIndex {
   display: grid;
   grid-auto-flow: row;
+  place-items: center;
   grid-template-columns: repeat(3, 1fr);
 }
