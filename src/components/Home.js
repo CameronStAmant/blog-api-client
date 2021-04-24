@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
+import Layout from './Layout';
 
 const Home = () => {
   const [posts, setPosts] = useState(null);
@@ -11,7 +12,6 @@ const Home = () => {
       });
       const data = await response.json();
       const item = data.posts;
-      console.log(item);
       const listPosts = item.map((post) => {
         return (
           <li key={post.title}>
@@ -25,9 +25,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="mainContent">
-      <ul className="postIndex">{posts ? posts : ''}</ul>
-    </div>
+    <Layout>
+      <div className="mainContent">
+        <ul className="postIndex">{posts ? posts : ''}</ul>
+      </div>
+    </Layout>
   );
 };
 
