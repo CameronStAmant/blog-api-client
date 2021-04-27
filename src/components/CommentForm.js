@@ -3,8 +3,13 @@ import { useParams } from 'react-router-dom';
 
 const CommentForm = () => {
   const { id } = useParams();
+
+  const handleSubmit = () => {
+    return 'http://localhost:3000/posts/' + id + '/comments';
+  };
+
   return (
-    <form method="POST" action="http://localhost:3000/comments">
+    <form method="POST" action={handleSubmit()}>
       <label>
         Name:
         <input type="text" name="author" />

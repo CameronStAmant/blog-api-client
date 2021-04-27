@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import './PostDetails.css';
 import Layout from './Layout';
 import CommentForm from './CommentForm';
+import Comments from './Comments';
 
 const PostDetails = () => {
   const [postDetails, setPostDetails] = useState(null);
@@ -18,7 +19,7 @@ const PostDetails = () => {
       setPostDetails(item);
     };
     fetchPostDetails();
-  }, []);
+  }, [id]);
 
   return (
     <Layout>
@@ -27,6 +28,7 @@ const PostDetails = () => {
         <p className="body"> {postDetails ? postDetails.body : ''}</p>
       </div>
       <CommentForm />
+      <Comments postid={id} />
     </Layout>
   );
 };
