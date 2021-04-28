@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import './CommentForm.css';
 
 const CommentForm = () => {
   const { id } = useParams();
@@ -9,18 +10,22 @@ const CommentForm = () => {
   };
 
   return (
-    <form method="POST" action={handleSubmit()}>
-      <label>
-        Name:
+    <div className="commentForm">
+      <h3>Submit a comment</h3>
+      <br />
+      <form method="POST" action={handleSubmit()}>
+        <label>Name: </label>
+        <br />
         <input type="text" name="author" />
-      </label>
-      <label>
-        Comment:
+        <br />
+        <label>Comment:</label>
+        <br />
         <textarea type="text" rows="5" name="body" />
-      </label>
-      <input type="hidden" value={id} name="post" />
-      <input type="submit" value="Submit" />
-    </form>
+        <br />
+        <input type="hidden" value={id} name="post" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
   );
 };
 

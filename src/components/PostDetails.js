@@ -23,12 +23,15 @@ const PostDetails = () => {
 
   return (
     <Layout>
-      <div>
-        <h3 className="title">{postDetails ? postDetails.title : ''}</h3>
-        <p className="body"> {postDetails ? postDetails.body : ''}</p>
+      <div className="postLayout">
+        <div className="post">
+          <h2>{postDetails ? postDetails.title : ''}</h2>
+          <br />
+          <p> {postDetails ? postDetails.body : ''}</p>
+        </div>
+        <CommentForm />
+        <Comments postid={id} />
       </div>
-      <CommentForm />
-      <Comments postid={id} />
     </Layout>
   );
 };

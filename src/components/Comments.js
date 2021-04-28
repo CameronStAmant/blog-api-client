@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Comments.css';
 
 const Comments = (props) => {
   const [comments, setComments] = useState([]);
@@ -17,17 +18,16 @@ const Comments = (props) => {
         }
       );
       const data = await response.json();
-      console.log(data.comments);
 
       for (const comment of data.comments) {
         const element = (
-          <div>
-            <h4>{comment.author.username}</h4>
-            <p>{comment.timestamp}</p>
-            <p>{comment.body}</p>
+          <div className="commentLayout">
+            <h4 className="commentAuthor">{comment.author.username}</h4>
+            <p className="commentTimestamp">{comment.timestamp}</p>
+            <p className="commentBody">{comment.body}</p>
+            <br />
           </div>
         );
-        console.log(comment.body);
         setComments((comments) => [...comments, element]);
       }
     };
@@ -35,7 +35,7 @@ const Comments = (props) => {
   }, []);
   return (
     <div>
-      <p>comments will display here. {comments}</p>
+      <div>{comments}</div>
     </div>
   );
 };
