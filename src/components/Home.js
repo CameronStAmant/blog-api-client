@@ -14,7 +14,7 @@ const Home = () => {
       const item = data.posts;
       const listPosts = item.map((post) => {
         return (
-          <li key={post.title}>
+          <li key={post.title} className="postDetails">
             <a href={post.url}>{post.title}</a>
           </li>
         );
@@ -27,6 +27,7 @@ const Home = () => {
   return (
     <Layout>
       <div className="mainContent">
+        <div className="homeBanner">Welcome to the tree blog!</div>
         <ul className="postIndex">{posts ? posts : ''}</ul>
       </div>
     </Layout>
