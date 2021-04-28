@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Comments = (props) => {
-  const [comments, setComments] = useState(null);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     // const fetchPost = async () => {
@@ -17,8 +17,19 @@ const Comments = (props) => {
         }
       );
       const data = await response.json();
-      console.log(props);
-      // setComments(data);
+      console.log(data.comments);
+
+      for (const comment of data.comments) {
+        const element = (
+          <div>
+            <h4>{comment.author.username}</h4>
+            <p>{comment.timestamp}</p>
+            <p>{comment.body}</p>
+          </div>
+        );
+        console.log(comment.body);
+        setComments((comments) => [...comments, element]);
+      }
     };
     fetchComments();
   }, []);
