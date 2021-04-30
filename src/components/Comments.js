@@ -5,11 +5,6 @@ const Comments = (props) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    // const fetchPost = async () => {
-    //   const post = Post.findById(props.id).exec();
-    //   console.log(post);
-    // };
-    // fetchPost();
     const fetchComments = async () => {
       const response = await fetch(
         'http://localhost:3000/posts/' + props.postid + '/comments',
