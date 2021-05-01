@@ -13,11 +13,15 @@ const Home = () => {
       const data = await response.json();
       const item = data.posts;
       const listPosts = item.map((post) => {
-        return (
-          <li key={post.title} className="postDetails">
-            <a href={post.url}>{post.title}</a>
-          </li>
-        );
+        if (post.published === true) {
+          return (
+            <li key={post.title} className="postDetails">
+              <a href={post.url}>{post.title}</a>
+            </li>
+          );
+        } else {
+          return null;
+        }
       });
       setPosts(listPosts);
     };
