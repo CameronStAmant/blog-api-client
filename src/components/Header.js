@@ -14,7 +14,9 @@ const Header = () => {
         <li>
           <NavLink to="/signUp">Sign up</NavLink>
         </li>
-        <li>Log out</li>
+        <li>
+          <NavLink to="/logout">Log out</NavLink>
+        </li>
       </ul>
     </div>
   );

@@ -4,6 +4,7 @@ import App from './App';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import PostDetails from './components/PostDetails';
+import Logout from './components/Logout';
 
 const Routes = () => {
   return (
@@ -12,6 +13,7 @@ const Routes = () => {
         <Route exact path="/" component={App} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signUp" component={SignUp} />
+        <Route exact path="/logout" component={Logout} />
         <Route exact path="/posts/:id" component={PostDetails} />
       </Switch>
     </BrowserRouter>
