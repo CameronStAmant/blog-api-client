@@ -13,6 +13,9 @@ const PostDetails = () => {
     const fetchPostDetails = async () => {
       const response = await fetch('http://localhost:3000/posts/' + id, {
         mode: 'cors',
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('user'),
+        },
       });
       const data = await response.json();
       const item = data.post;
