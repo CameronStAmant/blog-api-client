@@ -24,7 +24,6 @@ const Login = (props) => {
         window.localStorage.setItem('user', results.token);
         props.authRefresh(true);
         setRedirect(true);
-        // props.history.push('/');
       });
   };
 

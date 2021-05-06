@@ -9,9 +9,6 @@ const Home = (props) => {
     const fetchPosts = async () => {
       const response = await fetch('http://localhost:3000/posts', {
         mode: 'cors',
-        // headers: {
-        //   Authorization: 'Bearer ' + localStorage.getItem('user'),
-        // },
       });
       const data = await response.json();
       const item = data.posts;

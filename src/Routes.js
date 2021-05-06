@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from './App';
 import Login from './components/Login';
+import Logout from './components/Logout';
 import SignUp from './components/SignUp';
 import PostDetails from './components/PostDetails';
-import Logout from './components/Logout';
 
 const Routes = () => {
   const [auth, setAuth] = useState(false);
@@ -61,9 +61,7 @@ const Routes = () => {
         <Route
           exact
           path="/posts/:id"
-          render={() => (
-            <PostDetails authState={auth} username={username} userId={userId} />
-          )}
+          render={() => <PostDetails authState={auth} userId={userId} />}
         />
       </Switch>
     </BrowserRouter>
