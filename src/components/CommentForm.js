@@ -2,30 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './CommentForm.css';
 
-const CommentForm = () => {
+const CommentForm = (props) => {
   const [author, setAuthor] = useState(null);
   const [body, setBody] = useState(null);
   const [redirect, setRedirect] = useState(null);
-  const [auth, setAuth] = useState(false);
 
   const { id } = useParams();
-
-  const authChecker = () => {
-    const requestOptions = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + localStorage.getItem('user'),
-      },
-    };
-    fetch('http://localhost:3000/auth', requestOptions)
-      .then((response) => {
-        return response.json();
-      })
-      .then((results) => {
-        setAuth(results);
-      });
-  };
 
   const handleSubmit = (e) => {
     const requestOptions = {
@@ -45,13 +27,11 @@ const CommentForm = () => {
     ).then(setRedirect(true));
   };
 
-  useEffect(() => {
-    authChecker();
-  }, [redirect]);
+  useEffect(() => {}, [redirect]);
 
   return (
     <div>
-      {auth && (
+      {props.authState && (
         <div className="commentForm">
           <h3>Submit a comment</h3>
           <br />

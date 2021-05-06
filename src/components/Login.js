@@ -1,10 +1,12 @@
 import './Login.css';
 import Layout from './Layout';
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
-const Login = () => {
+const Login = (props) => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
+  const [redirect, setRedirect] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,11 +22,15 @@ const Login = () => {
       .then((response) => response.json())
       .then((results) => {
         window.localStorage.setItem('user', results.token);
+        props.authRefresh(true);
+        setRedirect(true);
+        // props.history.push('/');
       });
   };
 
   return (
     <Layout>
+      {redirect && <Redirect to={'/'} push />}
       <div className="mainContent">
         <form onSubmit={handleSubmit} className="login-form">
           <label htmlFor="username-field">Username:</label>

@@ -5,7 +5,7 @@ import Layout from './Layout';
 import CommentForm from './CommentForm';
 import Comments from './Comments';
 
-const PostDetails = () => {
+const PostDetails = (props) => {
   const [postDetails, setPostDetails] = useState(null);
   const { id } = useParams();
 
@@ -25,14 +25,14 @@ const PostDetails = () => {
   }, [id]);
 
   return (
-    <Layout>
+    <Layout authState={props.authState}>
       <div className="postLayout">
         <div className="post">
           <h2>{postDetails ? postDetails.title : ''}</h2>
           <br />
           <p> {postDetails ? postDetails.body : ''}</p>
         </div>
-        <CommentForm />
+        <CommentForm authState={props.authState} />
         <Comments postid={id} />
       </div>
     </Layout>
