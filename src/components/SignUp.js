@@ -1,12 +1,14 @@
 import './SignUp.css';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Layout from './Layout';
 
-const SignUp = (props) => {
+const SignUp = () => {
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const SignUp = (props) => {
       }),
     };
     fetch('http://localhost:3000/signup', requestOptions).then(
-      props.history.push('/login')
+      history.push('/login')
     );
   };
 

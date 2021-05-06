@@ -15,7 +15,7 @@ const Header = (props) => {
         )}
         {!props.authState && (
           <li>
-            <NavLink to="/signUp">Sign up</NavLink>
+            <NavLink to="/signup">Sign up</NavLink>
           </li>
         )}
         {props.authState && (
