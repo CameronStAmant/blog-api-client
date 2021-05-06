@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import './CommentForm.css';
 
 const CommentForm = (props) => {
-  const [author, setAuthor] = useState(null);
   const [body, setBody] = useState(null);
   const [redirect, setRedirect] = useState(null);
 
@@ -17,7 +16,7 @@ const CommentForm = (props) => {
         Authorization: 'Bearer ' + localStorage.getItem('user'),
       },
       body: JSON.stringify({
-        author: author,
+        author: props.userId,
         body: body,
       }),
     };
@@ -36,15 +35,6 @@ const CommentForm = (props) => {
           <h3>Submit a comment</h3>
           <br />
           <form onSubmit={handleSubmit}>
-            <label>Name: </label>
-            <br />
-            <input
-              type="text"
-              name="author"
-              value={author ? author : ''}
-              onChange={(e) => setAuthor(e.target.value)}
-            />
-            <br />
             <label>Comment:</label>
             <br />
             <textarea

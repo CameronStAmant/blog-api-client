@@ -32,7 +32,7 @@ const PostDetails = (props) => {
           <br />
           <p> {postDetails ? postDetails.body : ''}</p>
         </div>
-        <CommentForm authState={props.authState} />
+        <CommentForm authState={props.authState} userId={props.userId} />
         <Comments postid={id} />
       </div>
     </Layout>

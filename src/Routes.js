@@ -8,6 +8,8 @@ import Logout from './components/Logout';
 
 const Routes = () => {
   const [auth, setAuth] = useState(false);
+  const [username, setUsername] = useState(null);
+  const [userId, setUserId] = useState(null);
   const [refresh, setRefresh] = useState(false);
 
   const authChecker = () => {
@@ -24,11 +26,15 @@ const Routes = () => {
           return response.json();
         })
         .then((results) => {
-          setAuth(results);
+          setAuth(results.response);
+          setUsername(results.username);
+          setUserId(results.userId);
           setRefresh(false);
         });
     } else {
       setAuth(false);
+      setUsername(null);
+      setUserId(null);
       setRefresh(false);
     }
   };
@@ -55,7 +61,9 @@ const Routes = () => {
         <Route
           exact
           path="/posts/:id"
-          render={() => <PostDetails authState={auth} />}
+          render={() => (
+            <PostDetails authState={auth} username={username} userId={userId} />
+          )}
         />
       </Switch>
     </BrowserRouter>
