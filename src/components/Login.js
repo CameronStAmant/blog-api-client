@@ -16,6 +16,7 @@ const Login = (props) => {
       body: JSON.stringify({
         username: username,
         password: password,
+        adminSite: false,
       }),
     };
     fetch('http://localhost:3000/login', requestOptions)
