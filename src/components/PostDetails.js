@@ -8,6 +8,7 @@ import Comments from './Comments';
 const PostDetails = (props) => {
   const [postDetails, setPostDetails] = useState(null);
   const { id } = useParams();
+  const [loadComments, setLoadComments] = useState(false);
 
   useEffect(() => {
     const fetchPostDetails = async () => {
@@ -32,8 +33,12 @@ const PostDetails = (props) => {
           <br />
           <p> {postDetails ? postDetails.body : ''}</p>
         </div>
-        <CommentForm authState={props.authState} userId={props.userId} />
-        <Comments postid={id} />
+        <CommentForm
+          authState={props.authState}
+          userId={props.userId}
+          loadComments={(state) => setLoadComments(state)}
+        />
+        <Comments postid={id} loadComments={loadComments} />
       </div>
     </Layout>
   );

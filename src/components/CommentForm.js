@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './CommentForm.css';
 
 const CommentForm = (props) => {
   const [body, setBody] = useState(null);
-  const [redirect, setRedirect] = useState(null);
-
   const { id } = useParams();
 
   const handleSubmit = (e) => {
@@ -23,11 +21,8 @@ const CommentForm = (props) => {
     fetch(
       'http://localhost:3000/posts/' + id + '/comments',
       requestOptions
-    ).then(setRedirect(true));
+    ).then(props.loadComments(true));
   };
-
-  useEffect(() => {}, [redirect]);
-
   return (
     <div>
       {props.authState && (

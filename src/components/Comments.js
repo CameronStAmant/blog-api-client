@@ -27,7 +27,7 @@ const Comments = (props) => {
       }
     };
     fetchComments();
-  }, [props.postid]);
+  }, [props.postid, props.loadComments]);
   return (
     <div>
       <div>{comments}</div>
