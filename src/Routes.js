@@ -44,7 +44,7 @@ const Routes = () => {
   }, [refresh]);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter forceRefresh>
       <Switch>
         <Route exact path="/" render={() => <App authState={auth} />} />
         <Route
