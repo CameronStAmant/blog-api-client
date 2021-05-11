@@ -24,7 +24,7 @@ const CommentForm = (props) => {
     ).then(props.loadComments(true));
   };
   return (
-    <div>
+    <div className="form">
       {props.authState && (
         <div className="commentForm">
           <h3>Submit a comment</h3>

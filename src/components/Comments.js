@@ -28,11 +28,7 @@ const Comments = (props) => {
     };
     fetchComments();
   }, [props.postid, props.loadComments]);
-  return (
-    <div>
-      <div>{comments}</div>
-    </div>
-  );
+  return <div className="Comment">{comments}</div>;
 };
 
 export default Comments;

@@ -30,9 +30,8 @@ const Home = (props) => {
 
   return (
     <Layout authState={props.authState}>
-      <div className="mainContent">
-        {props.authState && <p>logged in!</p>}
-        <div className="homeBanner">Welcome to the tree blog!</div>
+      <div className="mainContentHome">
+        <div className="homeBanner">Welcome to the blog!</div>
         <ul className="postIndex">{posts ? posts : ''}</ul>
       </div>
     </Layout>

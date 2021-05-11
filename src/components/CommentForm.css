@@ -1,13 +1,26 @@
 .commentForm {
   display: grid;
+  justify-self: stretch;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
-    '. . title title . .'
+    'title title title title title title'
     'form form form form form form';
 }
 
 .commentForm h3 {
   grid-area: title;
+}
+
+.form {
+  justify-self: stretch;
+  gap: 15px;
+  margin: 15px;
+  padding: 10px;
+}
+
+h3 {
+  grid-area: title;
+  justify-self: center;
 }
 
 form {

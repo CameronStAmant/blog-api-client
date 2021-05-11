@@ -4,6 +4,7 @@
   grid-auto-flow: row;
   justify-items: center;
   gap: 50px;
+  grid-template-rows: repeat(3, auto);
 }
 
 .post {
@@ -12,7 +13,4 @@
 
 .post:first-child {
   text-align: center;
-}
-
-.post > p {
 }
