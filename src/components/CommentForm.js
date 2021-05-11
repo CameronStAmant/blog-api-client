@@ -43,6 +43,7 @@ const CommentForm = (props) => {
               name="body"
               value={body ? body : ''}
               onChange={(e) => setBody(e.target.value)}
+              required
             />
             <br />
             <input type="hidden" value={id} name="post" />

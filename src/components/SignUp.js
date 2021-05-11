@@ -12,18 +12,21 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        username: username,
-        email: email,
-        password: password,
-      }),
-    };
-    fetch('http://localhost:3000/signup', requestOptions).then(
-      history.push('/login')
-    );
+    if (password === confirmPassword) {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: username,
+          email: email,
+          password: password,
+        }),
+      };
+      fetch('http://localhost:3000/signup', requestOptions).then(
+        history.push('/login')
+      );
+    } else {
+    }
   };
 
   return (
@@ -39,6 +42,7 @@ const SignUp = () => {
             autoComplete="on"
             value={username ? username : ''}
             onChange={(e) => setUsername(e.target.value)}
+            required
           />
           <br />
           <label htmlFor="email-field">Email:</label>
@@ -50,6 +54,7 @@ const SignUp = () => {
             autoComplete="on"
             value={email ? email : ''}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <br />
           <label htmlFor="password-field">Password:</label>
@@ -61,6 +66,7 @@ const SignUp = () => {
             autoComplete="on"
             value={password ? password : ''}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <br />
           <label htmlFor="password-confirmation-field">Confirm Password:</label>
@@ -72,9 +78,11 @@ const SignUp = () => {
             autoComplete="on"
             value={confirmPassword ? confirmPassword : ''}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            required
           />
           <br />
           <input type="submit" value="Sign Up" />
+          {password !== confirmPassword ? 'The passwords do not match' : ''}
         </form>
       </div>
     </Layout>
