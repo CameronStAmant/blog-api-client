@@ -9,21 +9,25 @@ const PostDetails = (props) => {
   const [postDetails, setPostDetails] = useState(null);
   const { id } = useParams();
   const [loadComments, setLoadComments] = useState(false);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     const fetchPostDetails = async () => {
-      const response = await fetch('http://localhost:3000/posts/' + id, {
-        mode: 'cors',
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('user'),
-        },
-      });
+      const response = await fetch(
+        'https://serene-waters-04286.herokuapp.com/posts/' + id,
+        {
+          mode: 'cors',
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('user'),
+          },
+        }
+      );
       const data = await response.json();
       const item = data.post;
       setPostDetails(item);
     };
     fetchPostDetails();
-  }, [id]);
+  }, []);
 
   return (
     <Layout authState={props.authState}>
@@ -36,9 +40,16 @@ const PostDetails = (props) => {
         <CommentForm
           authState={props.authState}
           userId={props.userId}
-          loadComments={(state) => setLoadComments(state)}
+          loadComments={() => setLoadComments(!loadComments)}
+          setComments={() => setComments([])}
+          comments={comments}
         />
-        <Comments postid={id} loadComments={loadComments} />
+        <Comments
+          postid={id}
+          loadComments={loadComments}
+          setComments={(state) => setComments(state)}
+          comments={comments}
+        />
       </div>
     </Layout>
   );

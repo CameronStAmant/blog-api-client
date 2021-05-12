@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './CommentForm.css';
 
@@ -7,6 +7,7 @@ const CommentForm = (props) => {
   const { id } = useParams();
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const requestOptions = {
       method: 'POST',
       headers: {
@@ -19,10 +20,17 @@ const CommentForm = (props) => {
       }),
     };
     fetch(
-      'http://localhost:3000/posts/' + id + '/comments',
+      'https://serene-waters-04286.herokuapp.com/posts/' + id + '/comments',
       requestOptions
-    ).then(props.loadComments(true));
+    ).then(() => {
+      props.setComments();
+      props.loadComments();
+      setBody(null);
+    });
   };
+
+  useEffect(() => {}, [props.comments]);
+
   return (
     <div className="form">
       {props.authState && (

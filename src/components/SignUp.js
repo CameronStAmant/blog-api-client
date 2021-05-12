@@ -22,9 +22,10 @@ const SignUp = () => {
           password: password,
         }),
       };
-      fetch('http://localhost:3000/signup', requestOptions).then(
-        history.push('/login')
-      );
+      fetch(
+        'https://serene-waters-04286.herokuapp.com/signup',
+        requestOptions
+      ).then(history.push('/login'));
     } else {
     }
   };

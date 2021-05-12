@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './Comments.css';
 const { DateTime } = require('luxon');
 
 const Comments = (props) => {
-  const [comments, setComments] = useState([]);
-
   useEffect(() => {
     const fetchComments = async () => {
       const response = await fetch(
-        'http://localhost:3000/posts/' + props.postid + '/comments',
+        'https://serene-waters-04286.herokuapp.com/posts/' +
+          props.postid +
+          '/comments',
         {
           mode: 'cors',
         }
       );
       const data = await response.json();
 
+      let array = [];
       for (const comment of data.comments) {
         const element = (
           <div className="commentLayout" key={comment._id}>
@@ -28,12 +29,13 @@ const Comments = (props) => {
             <br />
           </div>
         );
-        setComments((comments) => [...comments, element]);
+        array = [...array, element];
       }
+      props.setComments(array);
     };
     fetchComments();
-  }, [props.postid, props.loadComments]);
-  return <div className="Comment">{comments}</div>;
+  }, [props.loadComments, props.comments]);
+  return <div className="Comment">{props.comments}</div>;
 };
 
 export default Comments;

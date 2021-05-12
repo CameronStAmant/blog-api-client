@@ -7,9 +7,12 @@ const Home = (props) => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch('http://localhost:3000/posts', {
-        mode: 'cors',
-      });
+      const response = await fetch(
+        'https://serene-waters-04286.herokuapp.com/posts',
+        {
+          mode: 'cors',
+        }
+      );
       const data = await response.json();
       const item = data.posts;
       const listPosts = item.map((post) => {
