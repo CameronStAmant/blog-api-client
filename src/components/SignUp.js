@@ -25,7 +25,7 @@ const SignUp = () => {
       fetch(
         'https://serene-waters-04286.herokuapp.com/signup',
         requestOptions
-      ).then(history.push('/login'));
+      ).then(() => history.push('/login'));
     } else {
     }
   };
