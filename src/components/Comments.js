@@ -34,7 +34,7 @@ const Comments = (props) => {
       props.setComments(array);
     };
     fetchComments();
-  }, [props.loadComments, props.comments]);
+  }, [props.loadComments]);
   return <div className="Comment">{props.comments}</div>;
 };
 

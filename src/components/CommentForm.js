@@ -6,7 +6,7 @@ const CommentForm = (props) => {
   const [body, setBody] = useState(null);
   const { id } = useParams();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const requestOptions = {
       method: 'POST',
@@ -19,14 +19,13 @@ const CommentForm = (props) => {
         body: body,
       }),
     };
-    fetch(
+    await fetch(
       'https://serene-waters-04286.herokuapp.com/posts/' + id + '/comments',
       requestOptions
-    ).then(() => {
-      props.setComments();
-      props.loadComments();
-      setBody(null);
-    });
+    );
+    props.setComments();
+    setBody(null);
+    props.loadComments();
   };
 
   useEffect(() => {}, [props.comments]);
