@@ -45,7 +45,7 @@ const Routes = () => {
 
   return (
     <BrowserRouter
-      basename={'https://serene-waters-04286.herokuapp.com'}
+      basename={'https://cameronstamant.github.io/blog-api-client/'}
       forceRefresh
     >
       <Switch>
