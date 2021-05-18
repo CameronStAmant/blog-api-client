@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import App from './App';
 import Login from './components/Login';
 import Logout from './components/Logout';
@@ -44,7 +44,7 @@ const Routes = () => {
   }, [refresh]);
 
   return (
-    <BrowserRouter basename="/blog-api-client" forceRefresh>
+    <HashRouter forceRefresh>
       <Switch>
         <Route exact path="/" render={() => <App authState={auth} />} />
         <Route
@@ -64,7 +64,7 @@ const Routes = () => {
           render={() => <PostDetails authState={auth} userId={userId} />}
         />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
