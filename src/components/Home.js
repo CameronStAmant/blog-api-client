@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import Layout from './Layout';
 
@@ -19,7 +20,7 @@ const Home = (props) => {
         if (post.published === true) {
           return (
             <li key={post.title} className="postDetails">
-              <a href={post.url}>{post.title}</a>
+              <Link to={'/posts/' + post.id}>{post.title}</Link>
             </li>
           );
         } else {
