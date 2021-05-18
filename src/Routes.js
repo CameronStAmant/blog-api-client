@@ -45,7 +45,7 @@ const Routes = () => {
 
   return (
     <BrowserRouter
-      basename={'https://cameronstamant.github.io/blog-api-client'}
+      basename={'https://cameronstamant.github.io/blog-api-client/'}
       forceRefresh
     >
       <Switch>
