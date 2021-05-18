@@ -44,10 +44,7 @@ const Routes = () => {
   }, [refresh]);
 
   return (
-    <BrowserRouter
-      basename="https://cameronstamant.github.io/blog-api-client/"
-      forceRefresh
-    >
+    <BrowserRouter basename="/blog-api-client" forceRefresh>
       <Switch>
         <Route exact path="/" render={() => <App authState={auth} />} />
         <Route
