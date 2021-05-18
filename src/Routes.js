@@ -44,7 +44,10 @@ const Routes = () => {
   }, [refresh]);
 
   return (
-    <BrowserRouter forceRefresh>
+    <BrowserRouter
+      basename={'https://serene-waters-04286.herokuapp.com'}
+      forceRefresh
+    >
       <Switch>
         <Route exact path="/" render={() => <App authState={auth} />} />
         <Route
