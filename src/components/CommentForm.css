@@ -34,3 +34,7 @@ form input {
 form textarea {
   width: 100%;
 }
+
+#commentSubmit {
+  width: 4em;
+}

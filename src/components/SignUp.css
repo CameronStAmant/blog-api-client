@@ -21,3 +21,7 @@ form input {
 form textarea {
   width: 100%;
 }
+
+#signUpSubmit {
+  width: 4em;
+}

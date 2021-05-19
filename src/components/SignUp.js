@@ -82,7 +82,7 @@ const SignUp = () => {
             required
           />
           <br />
-          <input type="submit" value="Sign Up" />
+          <input type="submit" id="signUpSubmit" value="Sign Up" />
           {password !== confirmPassword ? 'The passwords do not match' : ''}
         </form>
       </div>

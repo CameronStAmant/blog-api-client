@@ -49,7 +49,7 @@ const CommentForm = (props) => {
             />
             <br />
             <input type="hidden" value={id} name="post" />
-            <input type="submit" value="Submit" />
+            <input type="submit" id="commentSubmit" value="Submit" />
           </form>
         </div>
       )}
