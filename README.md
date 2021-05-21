@@ -1,25 +1,38 @@
-This project is the client frontend side of a blog. It was built with React and communicates with the node server via REST API. While similar to the admin frontend side, this side allows users to read posts and comments, and if they have signed up, add comments as well. Posts only display if they have been published by an admin. Demos, credentials, and repos for both frontends and the backend can be found below:
+# blog-api-client
 
-Client frontend:
+The client frontend side of a blog.
+
+<p align="center">
+    <img src="./blog-api-client.png" alt="Blog from the client frontend" />
+</p>
+
+## Features
+
+- Uses React.
+- Communicates with the server via REST API.
+- Users are only allowed to read posts and comments, and if they have signed up and are authenticated, add comments as well.
+- Posts only display if they have been published by an admin.
+
+## Client frontend:
 
 - Demo: https://cameronstamant.github.io/blog-api-client/#/
 - Repo: https://github.com/CameronStAmant/blog-api-client
 
-Admin frontend:
+## Admin frontend:
 
 - Demo: https://cameronstamant.github.io/blog-api-admin-view/#/
 - Repo: https://github.com/CameronStAmant/blog-api-admin-view
 
-Server:
+## Server:
 
 - Repo: https://github.com/CameronStAmant/blog-api-server
 
-Normal user:
+## Normal user:
 
 - Username: user1
 - Password: user1
 
-Admin:
+## Admin:
 
 - Username: admin
 - Password: admin
