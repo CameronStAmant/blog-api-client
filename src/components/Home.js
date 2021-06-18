@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css';
 import Layout from './Layout';
 
 const Home = (props) => {
@@ -19,8 +18,13 @@ const Home = (props) => {
       const listPosts = item.map((post) => {
         if (post.published === true) {
           return (
-            <li key={post.title} className="postDetails">
-              <Link to={'/posts/' + post.id}>{post.title}</Link>
+            <li
+              key={post.title}
+              className="display: grid box-border border-2 shadow-sm rounded-md gap-4 border-green-200 "
+            >
+              <Link to={'/posts/' + post.id}>
+                <p className="m-14 md:m-32">{post.title}</p>
+              </Link>
             </li>
           );
         } else {
@@ -34,9 +38,13 @@ const Home = (props) => {
 
   return (
     <Layout authState={props.authState}>
-      <div className="mainContentHome">
-        <div className="homeBanner">Welcome to the blog!</div>
-        <ul className="postIndex">{posts ? posts : ''}</ul>
+      <div className="display: grid grid-rows-home auto-rows-min row-start-2 col-span-full">
+        <p className="row-start-1 place-self-center min-h-px col-span-full">
+          Welcome to the blog!
+        </p>
+        <ul className="display: grid grid-flow-row md:grid-cols-2 row-start-2 lg:grid-cols-3 col-span-full gap-4 h-lg">
+          {posts ? posts : ''}
+        </ul>
       </div>
     </Layout>
   );
