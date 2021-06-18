@@ -1,4 +1,3 @@
-import './SignUp.css';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Layout from './Layout';
@@ -32,11 +31,17 @@ const SignUp = () => {
 
   return (
     <Layout>
-      <div className="mainContent">
+      <div className="display: grid col-start-1 col-span-full row-start-2 place-content-center">
         <form onSubmit={handleSubmit} className="Sign-up-form">
           <label htmlFor="username-field">Username:</label>
           <br />
           <input
+            className="
+              input
+              border-2
+              border-green-200
+              rounded-md
+              focus:border-green-500"
             type="text"
             id="username-field"
             name="username"
@@ -49,6 +54,12 @@ const SignUp = () => {
           <label htmlFor="email-field">Email:</label>
           <br />
           <input
+            className="
+              input
+              border-2
+            border-green-200
+              rounded-md
+            focus:border-green-500"
             type="email"
             id="email-field"
             name="email"
@@ -61,6 +72,12 @@ const SignUp = () => {
           <label htmlFor="password-field">Password:</label>
           <br />
           <input
+            className="
+              input
+              border-2
+            border-green-200
+              rounded-md
+            focus:border-green-500"
             type="password"
             id="password-field"
             name="password"
@@ -73,6 +90,12 @@ const SignUp = () => {
           <label htmlFor="password-confirmation-field">Confirm Password:</label>
           <br />
           <input
+            className="
+              input
+              border-2
+            border-green-200
+              rounded-md
+            focus:border-green-500"
             type="password"
             id="password-confirmation-field"
             name="password-confirmation"
@@ -82,7 +105,12 @@ const SignUp = () => {
             required
           />
           <br />
-          <input type="submit" id="signUpSubmit" value="Sign Up" />
+          <input
+            className="bg-green-100 rounded-md mt-2 hover:bg-green-200 cursor-pointer"
+            type="submit"
+            id="signUpSubmit"
+            value="Sign Up"
+          />
           {password !== confirmPassword ? 'The passwords do not match' : ''}
         </form>
       </div>
