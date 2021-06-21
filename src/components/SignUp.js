@@ -6,7 +6,7 @@ const SignUp = () => {
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
+  const [confirmPassword, setConfirmPassword] = useState('');
   const history = useHistory();
 
   const handleSubmit = (e) => {
@@ -31,13 +31,17 @@ const SignUp = () => {
 
   return (
     <Layout>
-      <div className="display: grid col-start-1 col-span-full row-start-2 place-content-center">
-        <form onSubmit={handleSubmit} className="Sign-up-form">
+      <div className="display: grid col-start-1 col-span-full grid-rows-3 row-start-2 place-content-center">
+        <form
+          onSubmit={handleSubmit}
+          className="text-center row-start-2 self-end"
+        >
           <label htmlFor="username-field">Username:</label>
           <br />
           <input
             className="
               input
+              w-48
               border-2
               border-green-200
               rounded-md
@@ -56,6 +60,7 @@ const SignUp = () => {
           <input
             className="
               input
+              w-48
               border-2
             border-green-200
               rounded-md
@@ -74,6 +79,7 @@ const SignUp = () => {
           <input
             className="
               input
+              w-48
               border-2
             border-green-200
               rounded-md
@@ -92,6 +98,7 @@ const SignUp = () => {
           <input
             className="
               input
+              w-48
               border-2
             border-green-200
               rounded-md
@@ -106,13 +113,17 @@ const SignUp = () => {
           />
           <br />
           <input
-            className="bg-green-100 rounded-md mt-2 hover:bg-green-200 cursor-pointer"
+            className="bg-green-100 rounded-md mt-2 w-48 hover:bg-green-200 cursor-pointer"
             type="submit"
             id="signUpSubmit"
             value="Sign Up"
           />
-          {password !== confirmPassword ? 'The passwords do not match' : ''}
         </form>
+        <p className="row-start-3">
+          {password !== confirmPassword && confirmPassword !== ''
+            ? 'The passwords do not match'
+            : ''}
+        </p>
       </div>
     </Layout>
   );
