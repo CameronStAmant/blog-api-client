@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './CommentForm.css';
 
 const CommentForm = (props) => {
   const [body, setBody] = useState(null);
@@ -31,27 +30,22 @@ const CommentForm = (props) => {
   useEffect(() => {}, [props.comments]);
 
   return (
-    <div className="form">
+    <div className="justify-self-stretch gap-4">
       {props.authState && (
-        <div className="commentForm">
-          <h3>Submit a comment</h3>
-          <br />
-          <form onSubmit={handleSubmit}>
-            <label>Comment:</label>
-            <br />
-            <textarea
-              type="text"
-              rows="5"
-              name="body"
-              value={body ? body : ''}
-              onChange={(e) => setBody(e.target.value)}
-              required
-            />
-            <br />
-            <input type="hidden" value={id} name="post" />
-            <input type="submit" id="commentSubmit" value="Submit" />
-          </form>
-        </div>
+        <form className="mt-14 mx-2 text-center" onSubmit={handleSubmit}>
+          <label className="">Submit a comment:</label>
+          <textarea
+            className="w-full box-border border-2 border-solid rounded-md shadow-md gap-2 auto-rows-min-content justify-self-stretch border-green-200
+"
+            rows="5"
+            name="body"
+            value={body ? body : ''}
+            onChange={(e) => setBody(e.target.value)}
+            required
+          />
+          <input type="hidden" value={id} className="w-full" name="post" />
+          <input type="submit" className="w-16" value="Submit" />
+        </form>
       )}
     </div>
   );
