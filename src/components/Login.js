@@ -35,13 +35,14 @@ const Login = (props) => {
   return (
     <Layout>
       {redirect && <Redirect to={'/'} push />}
-      <div className="display: grid col-start-1 col-span-full row-start-2 place-content-center">
-        <form onSubmit={handleSubmit} className="login-form">
+      <div className="display: grid col-start-1 grid-rows-6 col-span-full row-start-2 place-content-center">
+        <form onSubmit={handleSubmit} className="text-center row-start-3">
           <label htmlFor="username-field">Username:</label>
           <br />
           <input
             className="
               input
+              w-48
               border-2
               border-green-200
               rounded-md 
@@ -60,6 +61,7 @@ const Login = (props) => {
           <input
             className="
               input
+              w-48
               border-2
               border-green-200
               rounded-md 
@@ -78,14 +80,15 @@ const Login = (props) => {
             bg-green-100
             rounded-md
             mt-2
+            w-48
             hover:bg-green-200
             cursor-pointer"
             type="submit"
             id="loginButton"
             value="Login"
           />
-          {errorMessage && <div>{errorMessage}</div>}
         </form>
+        {errorMessage && <p className="row-start-4">{errorMessage}</p>}
       </div>
     </Layout>
   );
