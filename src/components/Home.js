@@ -20,10 +20,12 @@ const Home = (props) => {
           return (
             <li
               key={post.title}
-              className="display: grid box-border border-2 shadow-sm rounded-md gap-4 border-green-200 "
+              className="display: grid box-border border-2 shadow-sm rounded-md gap-4 border-green-200 mx-2"
             >
               <Link to={'/posts/' + post.id}>
-                <p className="m-14 md:m-32">{post.title}</p>
+                <p className="m-14 md:m-32 text-center text-xl font-semibold">
+                  {post.title}
+                </p>
               </Link>
             </li>
           );
@@ -39,10 +41,10 @@ const Home = (props) => {
   return (
     <Layout authState={props.authState}>
       <div className="display: grid grid-rows-home auto-rows-min row-start-2 col-span-full">
-        <p className="row-start-1 place-self-center min-h-px col-span-full">
+        <h2 className="row-start-1 place-self-center min-h-px col-span-full text-2xl font-semibold">
           Welcome to the blog!
-        </p>
-        <ul className="display: grid grid-flow-row md:grid-cols-2 row-start-2 lg:grid-cols-3 col-span-full gap-4 h-lg">
+        </h2>
+        <ul className="display: grid grid-flow-row md:grid-cols-2 row-start-2 lg:grid-cols-3 col-span-full gap-y-4 h-lg">
           {posts ? posts : ''}
         </ul>
       </div>
