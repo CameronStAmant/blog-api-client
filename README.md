@@ -12,6 +12,7 @@ The client frontend side of a blog.
 - Communicates with the server via REST API.
 - Users are only allowed to read posts and comments, and if they have signed up and are authenticated, add comments as well.
 - Posts only display if they have been published by an admin.
+- Responsive UI built with Tailwind CSS.
 
 ## Client frontend:
 
