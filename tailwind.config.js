@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateRows: {
-        home: '100px, 1fr',
+        home: '100px 1fr',
+        layout: '50px 1fr 50px',
+        post: '2fr auto auto',
+        postTitle: '100px 1fr',
       },
     },
     height: {
