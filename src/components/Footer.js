@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <div className="display: grid row-start-3 col-span-full">
-      <ul className="display: grid grid-flow-col">
-        <li>Privacy</li>
-        <li>About</li>
-        <li>Contact us</li>
-      </ul>
-    </div>
+    // <div className="row-start-3 col-span-full">
+    <ul className="display: grid grid-flow-col text-center py-2 row-start-3 col-span-full">
+      <li>Privacy</li>
+      <li>About</li>
+      <li>Contact us</li>
+    </ul>
+    // </div>
   );
 };
 
