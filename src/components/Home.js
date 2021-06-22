@@ -44,7 +44,7 @@ const Home = (props) => {
         <h2 className="row-start-1 place-self-center min-h-px col-span-full text-2xl font-semibold">
           Welcome to the blog!
         </h2>
-        <ul className="display: grid grid-flow-row md:grid-cols-2 row-start-2 lg:grid-cols-3 col-span-full gap-y-4 h-lg">
+        <ul className="display: grid grid-flow-row md:grid-cols-2 row-start-2 lg:grid-cols-3 col-span-full gap-y-4 h-auto">
           {posts ? posts : ''}
         </ul>
       </div>
