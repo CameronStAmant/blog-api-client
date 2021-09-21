@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import baseUrl from '../const';
 
 const CommentForm = (props) => {
   const [body, setBody] = useState(null);
@@ -18,10 +19,7 @@ const CommentForm = (props) => {
         body: body,
       }),
     };
-    await fetch(
-      'https://serene-waters-04286.herokuapp.com/posts/' + id + '/comments',
-      requestOptions
-    );
+    await fetch(baseUrl + '/posts/' + id + '/comments', requestOptions);
     props.setComments();
     setBody(null);
     props.loadComments();

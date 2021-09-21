@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Layout from './Layout';
+import baseUrl from '../const';
 
 const SignUp = () => {
   const [username, setUsername] = useState(null);
@@ -21,10 +22,9 @@ const SignUp = () => {
           password: password,
         }),
       };
-      fetch(
-        'https://serene-waters-04286.herokuapp.com/signup',
-        requestOptions
-      ).then(() => history.push('/login'));
+      fetch(baseUrl + '/signup', requestOptions).then(() =>
+        history.push('/login')
+      );
     } else {
     }
   };

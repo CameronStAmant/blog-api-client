@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from './Layout';
+import baseUrl from '../const';
 
 const Home = (props) => {
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(
-        'https://serene-waters-04286.herokuapp.com/posts',
-        {
-          mode: 'cors',
-        }
-      );
+      const response = await fetch(baseUrl + '/posts', {
+        mode: 'cors',
+      });
       const data = await response.json();
       const item = data.posts;
       const listPosts = item.map((post) => {

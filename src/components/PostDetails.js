@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Layout from './Layout';
 import CommentForm from './CommentForm';
 import Comments from './Comments';
+import baseUrl from '../const';
 
 const PostDetails = (props) => {
   const [postDetails, setPostDetails] = useState(null);
@@ -12,15 +13,12 @@ const PostDetails = (props) => {
 
   useEffect(() => {
     const fetchPostDetails = async () => {
-      const response = await fetch(
-        'https://serene-waters-04286.herokuapp.com/posts/' + id,
-        {
-          mode: 'cors',
-          headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('user'),
-          },
-        }
-      );
+      const response = await fetch(baseUrl + '/posts/' + id, {
+        mode: 'cors',
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('user'),
+        },
+      });
       const data = await response.json();
       const item = data.post;
       setPostDetails(item);

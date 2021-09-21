@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import baseUrl from '../const';
+
 const { DateTime } = require('luxon');
 
 const Comments = (props) => {
   useEffect(() => {
     const fetchComments = async () => {
       const response = await fetch(
-        'https://serene-waters-04286.herokuapp.com/posts/' +
-          props.postid +
-          '/comments',
+        baseUrl + '/posts/' + props.postid + '/comments',
         {
           mode: 'cors',
         }
