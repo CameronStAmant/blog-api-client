@@ -33,6 +33,12 @@ const PostDetails = (props) => {
           <h2 className="row-start-1 place-self-center text-2xl font-semibold">
             {postDetails ? postDetails.title : ''}
           </h2>
+          <img
+            src={
+              postDetails ? baseUrl + '/uploads/' + postDetails.coverPhoto : ''
+            }
+            alt="Post Cover"
+          />
           <p className="mx-2 px-1"> {postDetails ? postDetails.body : ''}</p>
         </div>
         {props.authState && (

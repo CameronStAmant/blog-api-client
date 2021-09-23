@@ -21,6 +21,10 @@ const Home = (props) => {
               className="display: grid box-border border-2 shadow-sm rounded-md gap-4 border-green-200 mx-2"
             >
               <Link to={'/posts/' + post.id}>
+                <img
+                  src={post ? baseUrl + '/uploads/' + post.coverPhoto : ''}
+                  alt="Post Cover"
+                />
                 <p className="m-14 md:m-32 text-center text-xl font-semibold">
                   {post.title}
                 </p>
