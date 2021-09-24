@@ -43,7 +43,7 @@ const CommentForm = (props) => {
           <input type="hidden" value={id} className="w-full" name="post" />
           <input
             type="submit"
-            className="border-solid border-4 border-green-200 rounded-md bg-green-200 hover:bg-green-300 hover:border-green-300 w-2/6 active:bg-green-400 active:border-green-400 shadow-sm"
+            className="border-solid border-4 border-green-200 rounded-md bg-green-200 hover:bg-green-300 hover:border-green-300 active:bg-green-400 active:border-green-400 shadow-sm"
             value="Submit"
           />
         </form>
