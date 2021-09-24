@@ -18,17 +18,16 @@ const Comments = (props) => {
       for (const comment of data.comments) {
         const element = (
           <div
-            className="box-border border-solid m-2 shadow-md p-1 display: grid gap-2 grid-rows-2 grid-cols-2 auto-rows-min-content justify-self-stretch border-2 border-green-200 rounded-md "
+            className="box-border border-solid shadow-md p-4 grid gap-2 auto-rows-min border-2 border-green-200 rounded-md"
             key={comment._id}
           >
-            <h4 className="justify-self-start">{comment.author.username}</h4>
-            <p className="justify-self-end">
+            <h4>{comment.author.username}</h4>
+            <p>
               {DateTime.fromISO(comment.timestamp).toLocaleString(
                 DateTime.DATETIME_MED
               )}
             </p>
-            <p className="row-start-2 col-span-full">{comment.body}</p>
-            <br />
+            <p className="row-start-2">{comment.body}</p>
           </div>
         );
         array = [...array, element];

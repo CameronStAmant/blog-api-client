@@ -28,7 +28,7 @@ const CommentForm = (props) => {
   useEffect(() => {}, [props.comments]);
 
   return (
-    <div className="justify-self-stretch gap-4">
+    <div className="gap-4">
       {props.authState && (
         <form className="mt-14 mx-2 text-center" onSubmit={handleSubmit}>
           <label className="">Submit a comment:</label>

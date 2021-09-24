@@ -18,16 +18,21 @@ const Home = (props) => {
           return (
             <li
               key={post.title}
-              className="display: grid box-border border-2 shadow-sm rounded-md gap-4 border-green-200 mx-2"
+              className="box-border shadow-sm rounded-md h-full"
             >
               <Link to={'/posts/' + post.id}>
-                <img
-                  src={post ? baseUrl + '/uploads/' + post.coverPhoto : ''}
-                  alt="Post Cover"
-                />
-                <p className="m-14 md:m-32 text-center text-xl font-semibold">
-                  {post.title}
-                </p>
+                <div className="grid auto-rows-post">
+                  <div className="overflow-hidden h-postCoverPhoto">
+                    <img
+                      className="w-full rounded-tl-md rounded-tr-md"
+                      src={post ? baseUrl + '/uploads/' + post.coverPhoto : ''}
+                      alt="Post Cover"
+                    />
+                  </div>
+                  <div className="text-3xl font-semibold flex-grow px-4 rounded-bl-md rounded-br-md bg-white -mt-1 pb-1">
+                    {post.title}
+                  </div>
+                </div>
               </Link>
             </li>
           );
@@ -42,11 +47,11 @@ const Home = (props) => {
 
   return (
     <Layout authState={props.authState}>
-      <div className="display: grid grid-rows-home auto-rows-min row-start-2 col-span-full">
-        <h2 className="row-start-1 place-self-center min-h-px col-span-full text-2xl font-semibold">
+      <div className="grid grid-rows-home row-start-2 mx-4">
+        <h2 className="place-self-center text-3xl text-green-900">
           Welcome to the blog!
         </h2>
-        <ul className="display: grid grid-flow-row md:grid-cols-2 row-start-2 lg:grid-cols-3 col-span-full gap-y-4 h-auto">
+        <ul className="grid md:grid-cols-2 auto-rows-min lg:grid-cols-3 gap-4">
           {posts ? posts : ''}
         </ul>
       </div>

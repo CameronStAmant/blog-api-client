@@ -34,64 +34,66 @@ const Login = (props) => {
   };
 
   return (
-    <Layout>
-      {redirect && <Redirect to={'/'} push />}
-      <div className="display: grid col-start-1 grid-rows-6 col-span-full row-start-2 place-content-center">
-        <form onSubmit={handleSubmit} className="text-center row-start-3">
-          <label htmlFor="username-field">Username:</label>
-          <br />
-          <input
-            className="
+    <div className="bg-gray-600 min-h-screen">
+      <Layout>
+        {redirect && <Redirect to={'/'} push />}
+        <div className="grid place-content-center">
+          <form onSubmit={handleSubmit} className="text-center">
+            <label htmlFor="username-field">Username:</label>
+            <br />
+            <input
+              className="
               input
               w-48
               border-2
               border-green-200
               rounded-md 
               focus:border-green-500"
-            type="text"
-            id="username-field"
-            name="username"
-            autoComplete="on"
-            value={username ? username : ''}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-          <br />
-          <label htmlFor="password-field">Password:</label>
-          <br />
-          <input
-            className="
+              type="text"
+              id="username-field"
+              name="username"
+              autoComplete="on"
+              value={username ? username : ''}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <br />
+            <label htmlFor="password-field">Password:</label>
+            <br />
+            <input
+              className="
               input
               w-48
               border-2
               border-green-200
               rounded-md 
               focus:border-green-500"
-            type="password"
-            id="password-field"
-            name="password"
-            autoComplete="on"
-            value={password ? password : ''}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <br />
-          <input
-            className="
+              type="password"
+              id="password-field"
+              name="password"
+              autoComplete="on"
+              value={password ? password : ''}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <br />
+            <input
+              className="
             bg-green-100
             rounded-md
             mt-2
             w-48
             hover:bg-green-200
             cursor-pointer"
-            type="submit"
-            id="loginButton"
-            value="Login"
-          />
-        </form>
-        {errorMessage && <p className="row-start-4">{errorMessage}</p>}
-      </div>
-    </Layout>
+              type="submit"
+              id="loginButton"
+              value="Login"
+            />
+          </form>
+          {errorMessage && <p className="row-start-4">{errorMessage}</p>}
+        </div>
+      </Layout>
+    </div>
   );
 };
 

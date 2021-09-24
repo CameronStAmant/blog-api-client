@@ -27,37 +27,44 @@ const PostDetails = (props) => {
   }, []);
 
   return (
-    <Layout authState={props.authState}>
-      <div className="display: grid grid-rows-post auto-rows-auto row-start-2 col-span-full">
-        <div className="display: grid grid-rows-postTitle">
-          <h2 className="row-start-1 place-self-center text-2xl font-semibold">
-            {postDetails ? postDetails.title : ''}
-          </h2>
-          <img
-            src={
-              postDetails ? baseUrl + '/uploads/' + postDetails.coverPhoto : ''
-            }
-            alt="Post Cover"
-          />
-          <p className="mx-2 px-1"> {postDetails ? postDetails.body : ''}</p>
-        </div>
-        {props.authState && (
-          <CommentForm
-            authState={props.authState}
-            userId={props.userId}
-            loadComments={() => setLoadComments(!loadComments)}
-            setComments={() => setComments([])}
+    <div className="bg-gray-600 min-h-screen">
+      <Layout authState={props.authState}>
+        <div className="display: grid auto-rows-min auto-rows-auto row-start-2 col-span-full mx-4">
+          <div className="display: grid grid-rows-postTitle">
+            <h2 className="row-start-1 place-self-center text-3xl text-green-900">
+              {postDetails ? postDetails.title : ''}
+            </h2>
+            <div className="overflow-hidden h-postCoverPhoto">
+              <img
+                className="w-full"
+                src={
+                  postDetails
+                    ? baseUrl + '/uploads/' + postDetails.coverPhoto
+                    : ''
+                }
+                alt="Post Cover"
+              />
+            </div>
+            <p className="mx-2 px-1"> {postDetails ? postDetails.body : ''}</p>
+          </div>
+          {props.authState && (
+            <CommentForm
+              authState={props.authState}
+              userId={props.userId}
+              loadComments={() => setLoadComments(!loadComments)}
+              setComments={() => setComments([])}
+              comments={comments}
+            />
+          )}
+          <Comments
+            postid={id}
+            loadComments={loadComments}
+            setComments={(state) => setComments(state)}
             comments={comments}
           />
-        )}
-        <Comments
-          postid={id}
-          loadComments={loadComments}
-          setComments={(state) => setComments(state)}
-          comments={comments}
-        />
-      </div>
-    </Layout>
+        </div>
+      </Layout>
+    </div>
   );
 };
 
