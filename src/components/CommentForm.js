@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import baseUrl from '../const';
 import Button from './Button';
+import Textarea from './Textarea';
 
 const CommentForm = (props) => {
   const [body, setBody] = useState(null);
@@ -33,14 +34,7 @@ const CommentForm = (props) => {
       {props.authState && (
         <form className="mt-14 mx-2 text-center">
           <label className="">Submit a comment:</label>
-          <textarea
-            className="w-full box-border border-2 border-solid rounded-md shadow-md gap-2 auto-rows-min-content justify-self-stretch border-green-200"
-            rows="5"
-            name="body"
-            value={body ? body : ''}
-            onChange={(e) => setBody(e.target.value)}
-            required
-          />
+          <Textarea value={body} onChange={(e) => setBody(e.target.value)} />
           <input type="hidden" value={id} className="w-full" name="post" />
           <Button value="Submit" color="green" onSubmit={handleSubmit} />
         </form>
