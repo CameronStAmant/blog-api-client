@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Layout from './Layout';
 import baseUrl from '../const';
+import ArticleCard from './ArticleCard';
 
 const Home = (props) => {
   const [posts, setPosts] = useState(null);
@@ -20,20 +20,7 @@ const Home = (props) => {
               key={post.title}
               className="box-border shadow-sm rounded-md h-full"
             >
-              <Link to={'/posts/' + post.id}>
-                <div className="grid auto-rows-post">
-                  <div className="overflow-hidden h-postCoverPhoto">
-                    <img
-                      className="w-full rounded-tl-md rounded-tr-md"
-                      src={post ? baseUrl + '/uploads/' + post.coverPhoto : ''}
-                      alt="Post Cover"
-                    />
-                  </div>
-                  <div className="text-3xl font-semibold flex-grow px-4 rounded-bl-md rounded-br-md bg-white -mt-1 pb-1">
-                    {post.title}
-                  </div>
-                </div>
-              </Link>
+              <ArticleCard post={post} />
             </li>
           );
         } else {
