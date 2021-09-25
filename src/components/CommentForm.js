@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import baseUrl from '../const';
+import Button from './Button';
 
 const CommentForm = (props) => {
   const [body, setBody] = useState(null);
@@ -41,11 +42,7 @@ const CommentForm = (props) => {
             required
           />
           <input type="hidden" value={id} className="w-full" name="post" />
-          <input
-            type="submit"
-            className="border-solid border-4 border-green-200 rounded-md bg-green-200 hover:bg-green-300 hover:border-green-300 active:bg-green-400 active:border-green-400 shadow-sm"
-            value="Submit"
-          />
+          <Button type="submit" value="Submit" />
         </form>
       )}
     </div>
