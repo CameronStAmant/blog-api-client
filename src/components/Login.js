@@ -60,7 +60,12 @@ const Login = (props) => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
-          <Button value="Login" color="green" onSubmit={handleSubmit} />
+          <Button
+            value="Login"
+            color="green"
+            type="submit"
+            onClick={handleSubmit}
+          />
         </form>
         {errorMessage && <p className="row-start-4">{errorMessage}</p>}
       </div>

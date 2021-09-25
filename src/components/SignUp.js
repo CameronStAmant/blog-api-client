@@ -75,7 +75,12 @@ const SignUp = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
           <br />
-          <Button value="Login" color="green" onSubmit={handleSubmit} />
+          <Button
+            value="Login"
+            color="green"
+            type="submit"
+            onClick={handleSubmit}
+          />
         </form>
         <p className="row-start-3">
           {password !== confirmPassword && confirmPassword !== ''

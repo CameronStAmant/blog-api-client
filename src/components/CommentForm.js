@@ -36,7 +36,7 @@ const CommentForm = (props) => {
           <label className="">Submit a comment:</label>
           <Textarea value={body} onChange={(e) => setBody(e.target.value)} />
           <input type="hidden" value={id} className="w-full" name="post" />
-          <Button value="Submit" color="green" onSubmit={handleSubmit} />
+          <Button value="Submit" color="green" onClick={handleSubmit} />
         </form>
       )}
     </div>

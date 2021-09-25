@@ -22,7 +22,7 @@ const Comments = (props) => {
             key={comment._id}
           >
             <h4>{comment.author.username}</h4>
-            <p>
+            <p className="italic text-sm">
               {DateTime.fromISO(comment.timestamp).toLocaleString(
                 DateTime.DATETIME_MED
               )}

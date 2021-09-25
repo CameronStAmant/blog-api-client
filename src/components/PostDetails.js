@@ -33,7 +33,7 @@ const PostDetails = (props) => {
           <h2 className="row-start-1 place-self-center text-3xl text-green-900">
             {postDetails ? postDetails.title : ''}
           </h2>
-          <div className="overflow-hidden h-postCoverPhoto">
+          <div className="overflow-hidden h-postCoverPhoto rounded-md">
             <img
               className="w-full"
               src={
