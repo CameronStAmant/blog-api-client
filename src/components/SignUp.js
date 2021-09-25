@@ -34,10 +34,7 @@ const SignUp = () => {
   return (
     <Layout>
       <div className="grid place-content-center">
-        <form
-          onSubmit={handleSubmit}
-          className="text-center row-start-2 self-end"
-        >
+        <form className="text-center row-start-2 self-end">
           <label htmlFor="username-field">Username:</label>
           <br />
           <Input
@@ -78,7 +75,7 @@ const SignUp = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
           <br />
-          <Button type={'submit'} value={'Submit'} />
+          <Button value="Login" color="green" onSubmit={handleSubmit} />
         </form>
         <p className="row-start-3">
           {password !== confirmPassword && confirmPassword !== ''

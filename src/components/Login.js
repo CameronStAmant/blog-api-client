@@ -39,7 +39,7 @@ const Login = (props) => {
     <Layout>
       {redirect && <Redirect to={'/'} push />}
       <div className="grid place-content-center">
-        <form onSubmit={handleSubmit} className="text-center">
+        <form className="text-center">
           <label htmlFor="username-field">Username:</label>
           <br />
           <Input
@@ -60,7 +60,7 @@ const Login = (props) => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
-          <Button type={'submit'} value={'Login'} />
+          <Button value="Login" color="green" onSubmit={handleSubmit} />
         </form>
         {errorMessage && <p className="row-start-4">{errorMessage}</p>}
       </div>

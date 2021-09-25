@@ -31,7 +31,7 @@ const CommentForm = (props) => {
   return (
     <div className="gap-4">
       {props.authState && (
-        <form className="mt-14 mx-2 text-center" onSubmit={handleSubmit}>
+        <form className="mt-14 mx-2 text-center">
           <label className="">Submit a comment:</label>
           <textarea
             className="w-full box-border border-2 border-solid rounded-md shadow-md gap-2 auto-rows-min-content justify-self-stretch border-green-200"
@@ -42,7 +42,7 @@ const CommentForm = (props) => {
             required
           />
           <input type="hidden" value={id} className="w-full" name="post" />
-          <Button type="submit" value="Submit" />
+          <Button value="Submit" color="green" onSubmit={handleSubmit} />
         </form>
       )}
     </div>
