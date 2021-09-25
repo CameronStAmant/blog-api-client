@@ -32,7 +32,7 @@ const CommentForm = (props) => {
   return (
     <div className="gap-4">
       {props.authState && (
-        <form className="mt-14 mx-2 text-center">
+        <form className="mt-14 text-center">
           <label className="">Submit a comment:</label>
           <Textarea value={body} onChange={(e) => setBody(e.target.value)} />
           <input type="hidden" value={id} className="w-full" name="post" />
