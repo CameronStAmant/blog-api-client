@@ -42,6 +42,7 @@ const SignUp = () => {
             name="username"
             value={username ? username : ''}
             onChange={(e) => setUsername(e.target.value)}
+            addonClasses="m-auto"
           />
           <label htmlFor="email-field">Email</label>
           <Input
@@ -50,6 +51,7 @@ const SignUp = () => {
             name="email"
             value={email ? email : ''}
             onChange={(e) => setEmail(e.target.value)}
+            addonClasses="m-auto"
           />
           <label htmlFor="password-field">Password</label>
           <Input
@@ -58,6 +60,7 @@ const SignUp = () => {
             name="password"
             value={password ? password : ''}
             onChange={(e) => setPassword(e.target.value)}
+            addonClasses="m-auto"
           />
           <label htmlFor="password-confirmation-field">Confirm Password</label>
           <Input
@@ -66,6 +69,7 @@ const SignUp = () => {
             name="password-confirmation"
             value={confirmPassword ? confirmPassword : ''}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            addonClasses="m-auto"
           />
           <Button
             value="Login"

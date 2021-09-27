@@ -48,6 +48,7 @@ const Login = (props) => {
             name="username"
             value={username ? username : ''}
             onChange={(e) => setUsername(e.target.value)}
+            addonClasses="m-auto"
           />
           <label htmlFor="password-field">Password</label>
           <Input
@@ -56,6 +57,7 @@ const Login = (props) => {
             name="password"
             value={password ? password : ''}
             onChange={(e) => setPassword(e.target.value)}
+            addonClasses="m-auto"
           />
           <Button
             value="Login"

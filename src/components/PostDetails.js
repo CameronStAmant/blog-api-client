@@ -30,7 +30,7 @@ const PostDetails = (props) => {
     <Layout authState={props.authState}>
       <div className="display: grid auto-rows-min auto-rows-auto row-start-2 col-span-full mx-4">
         <div className="display: grid grid-rows-postTitle">
-          <h2 className="row-start-1 place-self-center text-3xl text-green-900">
+          <h2 className="row-start-1 place-self-center text-3xl text-dark-cyan">
             {postDetails ? postDetails.title : ''}
           </h2>
           <div className="overflow-hidden h-postCoverPhoto rounded-md">

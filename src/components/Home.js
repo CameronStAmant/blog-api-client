@@ -35,7 +35,7 @@ const Home = (props) => {
   return (
     <Layout authState={props.authState}>
       <div className="grid grid-rows-home row-start-2 mx-4">
-        <h2 className="place-self-center text-3xl text-green-900">
+        <h2 className="place-self-center text-3xl text-dark-cyan">
           Welcome to the blog!
         </h2>
         <ul className="grid md:grid-cols-2 auto-rows-min lg:grid-cols-3 gap-4">
