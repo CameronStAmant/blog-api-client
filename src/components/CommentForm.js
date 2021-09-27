@@ -33,9 +33,8 @@ const CommentForm = (props) => {
     <div className="gap-4">
       {props.authState && (
         <form className="mt-14 text-center">
-          <label className="">Submit a comment:</label>
+          <label className="">Submit a comment</label>
           <Textarea value={body} onChange={(e) => setBody(e.target.value)} />
-          <input type="hidden" value={id} className="w-full" name="post" />
           <Button value="Submit" color="green" onClick={handleSubmit} />
         </form>
       )}

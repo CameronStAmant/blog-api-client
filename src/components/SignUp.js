@@ -35,8 +35,7 @@ const SignUp = () => {
     <Layout>
       <div className="grid place-content-center">
         <form className="text-center row-start-2 self-end">
-          <label htmlFor="username-field">Username:</label>
-          <br />
+          <label htmlFor="username-field">Username</label>
           <Input
             type="text"
             id="username-field"
@@ -44,9 +43,7 @@ const SignUp = () => {
             value={username ? username : ''}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <br />
-          <label htmlFor="email-field">Email:</label>
-          <br />
+          <label htmlFor="email-field">Email</label>
           <Input
             type="email"
             id="email-field"
@@ -54,9 +51,7 @@ const SignUp = () => {
             value={email ? email : ''}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <br />
-          <label htmlFor="password-field">Password:</label>
-          <br />
+          <label htmlFor="password-field">Password</label>
           <Input
             type="password"
             id="password-field"
@@ -64,9 +59,7 @@ const SignUp = () => {
             value={password ? password : ''}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <br />
-          <label htmlFor="password-confirmation-field">Confirm Password:</label>
-          <br />
+          <label htmlFor="password-confirmation-field">Confirm Password</label>
           <Input
             type="password"
             id="password-confirmation-field"
@@ -74,7 +67,6 @@ const SignUp = () => {
             value={confirmPassword ? confirmPassword : ''}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-          <br />
           <Button
             value="Login"
             color="green"

@@ -40,8 +40,8 @@ const Login = (props) => {
       {redirect && <Redirect to={'/'} push />}
       <div className="grid place-content-center">
         <form className="text-center">
-          <label htmlFor="username-field">Username:</label>
-          <br />
+          <label htmlFor="username-field">Username</label>
+
           <Input
             type="text"
             id="username-field"
@@ -49,9 +49,7 @@ const Login = (props) => {
             value={username ? username : ''}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <br />
-          <label htmlFor="password-field">Password:</label>
-          <br />
+          <label htmlFor="password-field">Password</label>
           <Input
             type="password"
             id="password-field"
@@ -59,7 +57,6 @@ const Login = (props) => {
             value={password ? password : ''}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <br />
           <Button
             value="Login"
             color="green"

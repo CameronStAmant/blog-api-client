@@ -44,7 +44,7 @@ const PostDetails = (props) => {
               alt="Post Cover"
             />
           </div>
-          <p className="mx-2 px-1"> {postDetails ? postDetails.body : ''}</p>
+          <p className="mx-2 p-smd"> {postDetails ? postDetails.body : ''}</p>
         </div>
         {props.authState && (
           <CommentForm
