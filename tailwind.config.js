@@ -23,6 +23,7 @@ module.exports = {
     },
     padding: {
       md: '20px',
+      sm: '4px',
     },
   },
   variants: {
