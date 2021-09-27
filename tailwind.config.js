@@ -26,6 +26,9 @@ module.exports = {
       smd: '8px',
       sm: '4px',
     },
+    purge: {
+      content: ['./src/**/*.html'],
+    },
   },
   variants: {
     extend: { backgroundColor: ['active'], borderColor: ['active'] },
